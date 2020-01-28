@@ -1,9 +1,11 @@
 package com.w2a.testcases;
 
 import com.w2a.base.TestBase;
+import com.w2a.utilities.TestUtil;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -11,7 +13,11 @@ import java.io.IOException;
 public class BankManangerLoginTest extends TestBase {
 
     @Test
-    public void loginAsBankMananger() throws IOException, InterruptedException {
+    public void bankManangerLoginTest() throws IOException, InterruptedException {
+
+        if (!TestUtil.isTestRunnable("bankManangerLoginTest", excel)){
+            throw new SkipException("Skipping the test " + "bankManangerLoginTest".toUpperCase() +" as the Run mode is NO");
+        }
 
         verifyEquals("abc", "xwz");
         Thread.sleep(2000);

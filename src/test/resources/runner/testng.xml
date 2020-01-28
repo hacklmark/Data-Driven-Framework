@@ -12,7 +12,7 @@
         <classes>
             <class name="com.w2a.testcases.BankManangerLoginTest">
                 <methods>
-                    <include name="loginAsBankMananger"/>
+                    <include name="bankManangerLoginTest"/>
                 </methods>
             </class>
         </classes>
