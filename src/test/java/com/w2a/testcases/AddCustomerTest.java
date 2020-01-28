@@ -11,18 +11,19 @@ import org.testng.annotations.Test;
 public class AddCustomerTest extends TestBase {
 
     @Test(dataProviderClass = TestUtil.class,dataProvider = "dp")
-    public void AddCustomerTest(String firstName, String lastName, String postCode, String alerttext) {
+    public void addCustomerTest(String firstName, String lastName, String postCode, String alerttext) throws InterruptedException {
 
         click("addCustBtn_CSS");
         type("firstname_CSS",firstName);
         type("lastname_XPATH",lastName);
         type("postcode_CSS",postCode);
         click("addbtn_CSS");
+        Thread.sleep(2000);
 
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         Assert.assertTrue(alert.getText().contains(alerttext));
         alert.accept();
 
-        Assert.fail("Customer not added successfully");
+        Thread.sleep(2000);
     }
 }

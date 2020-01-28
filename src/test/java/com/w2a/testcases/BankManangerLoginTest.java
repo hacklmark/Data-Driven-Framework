@@ -11,10 +11,10 @@ import java.io.IOException;
 public class BankManangerLoginTest extends TestBase {
 
     @Test
-    public void loginAsBankMananger() throws IOException {
+    public void loginAsBankMananger() throws IOException, InterruptedException {
 
         verifyEquals("abc", "xwz");
-
+        Thread.sleep(2000);
         log.debug("Inside Login Test");
         click("bmlBtn_CSS");
 
@@ -25,6 +25,6 @@ public class BankManangerLoginTest extends TestBase {
         //Reporter.log: Create Report in test-output/html/index.html
         Reporter.log("Login successfully executed");
 
-        Assert.fail("Login not successful");
+        //Assert.fail("Login not successful");
     }
 }

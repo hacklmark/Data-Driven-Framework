@@ -22,7 +22,17 @@
         <classes>
             <class name="com.w2a.testcases.AddCustomerTest">
                 <methods>
-                    <include name="AddCustomer"/>
+                    <include name="addCustomerTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Open Account Test">
+        <classes>
+            <class name="com.w2a.testcases.OpenAccountTest">
+                <methods>
+                    <include name="openAccountTest"/>
                 </methods>
             </class>
         </classes>

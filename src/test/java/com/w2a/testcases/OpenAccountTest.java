@@ -10,30 +10,15 @@ import org.testng.annotations.Test;
 
 public class OpenAccountTest extends TestBase {
 
-    @Test(dataProvider = "getData")
-    public void openAccountTest(String customer, String currency) {
-
-
-    }
-
     @Test(dataProviderClass = TestUtil.class,dataProvider = "dp")
-    public Object[][] getData(){
+    public void openAccountTest(String customer, String currency) throws InterruptedException {
 
-        String sheetName = "OpenAccountTest";
-        int rows = excel.getRowCount(sheetName);
-        int cols = excel.getColumnCount(sheetName);
-
-        Object[][] data = new Object[rows-1][cols];
-
-        for (int rowNum = 2; rowNum <= rows; rowNum++){ //2
-            for (int colNum = 0; colNum < cols; colNum++){
-
-                //data[0][0]
-                data[rowNum - 2][colNum] = excel.getCellData(sheetName, colNum, rowNum);
-                // -2
-            }
-        }
-
-        return data;
+        click("openaccount_CSS");
+        select("customer_CSS", customer);
+        select("currency_CSS", currency);
+        click("process_CSS");
+        Thread.sleep(2000);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.accept();
     }
 }
