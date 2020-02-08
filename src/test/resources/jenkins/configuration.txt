@@ -1,0 +1,27 @@
+//Downloand
+jenkins.war
+
+//start jenkins in command line
+java -jar jenkins.war //deafault 8080 port
+java -jar jenkins.war --httpPort=9090
+
+//Username
+admin
+
+//Password
+c:\Users\Mark\.jenkins\secrets\initialAdminPassword
+
+//if 8080 port is used, you can kill the task
+netstat -ano | findstr 8080
+taskkill /F /PID xxxx
+
+//New Project
+JDK, MAVEN
+pom.xml path
+goals: clean test/veriy
+
+//Extent Report
+Add plugin Html Publisher
+
+//Extent Report will be shown in jenkins
+java -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar jenkins.war
