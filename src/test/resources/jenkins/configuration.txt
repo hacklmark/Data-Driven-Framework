@@ -25,3 +25,8 @@ Add plugin Html Publisher
 
 //Extent Report will be shown in jenkins
 java -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar jenkins.war
+
+//Parameterizing the build for browser and environment
+Configuration > Diese Build ist parametrisiert > Auswahl
+Name = Config.properties > name of the variable of browser (browser=chrome)
+Auswahlmöglichkeit = firefox </br> chrome </br> ie
